@@ -12,13 +12,21 @@ public class EricsPowerUps : MonoBehaviour
     public Material SpeedBoostMaterial;
     public Material DoubleJumpMaterial;
 
+    private float tempvalue;
+
+    private void Start()
+    {
+        tempvalue = GameObject.FindGameObjectWithTag("Player").GetComponent<EricCharacterMovement>().playerSpeed;
+    }
+
     void Update()
     {
         if (SpeedBoost)
         {
             gameObject.GetComponent<MeshRenderer>().material = SpeedBoostMaterial;
         }
-        else if (DoubleJump)
+        
+        if (DoubleJump)
         {
             gameObject.GetComponent<MeshRenderer>().material = DoubleJumpMaterial;
         }
@@ -65,7 +73,7 @@ public class EricsPowerUps : MonoBehaviour
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<SphereCollider>().enabled = false;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<EricCharacterMovement>().playerSpeed = 12.0f;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<EricCharacterMovement>().playerSpeed = tempvalue * 2;
         GameObject.FindGameObjectWithTag("Player").GetComponent<EricCharacterMovement>().speedParticle.SetActive(true);
 
         yield return new WaitForSeconds(seconds);
@@ -77,7 +85,7 @@ public class EricsPowerUps : MonoBehaviour
 
         gameObject.GetComponent<MeshRenderer>().enabled = true;
         gameObject.GetComponent<SphereCollider>().enabled = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<EricCharacterMovement>().playerSpeed = 4.0f;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<EricCharacterMovement>().playerSpeed = tempvalue;
         GameObject.FindGameObjectWithTag("Player").GetComponent<EricCharacterMovement>().speedParticle.SetActive(false);
         Active = false;
     }

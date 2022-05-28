@@ -321,6 +321,7 @@
 "Assets/Scripts/Button.cs"
 "Assets/Scripts/EricCharacterMovement.cs"
 "Assets/Scripts/EricsPowerUps.cs"
+"Assets/Scripts/FollowCamera.cs"
 "Assets/Scripts/Hashing.cs"
 "Assets/Scripts/SetUpCameras.cs"
 "Assets/Scripts/Slime.cs"

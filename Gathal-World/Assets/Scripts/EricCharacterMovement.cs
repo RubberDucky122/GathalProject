@@ -24,7 +24,6 @@ public class EricCharacterMovement : MonoBehaviour
     public float jumpHeight = 4.0f;
     public float turnSmoothTime = 0.1f;
     public float speedDampTime = 0.01f;
-    public float jumpForce;
     public int PlayerHP = 20;
     public int respawnTimer;
 
