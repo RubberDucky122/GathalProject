@@ -24,7 +24,7 @@ public class EricCharacterMovement : MonoBehaviour
     public float jumpHeight = 4.0f;
     public float turnSmoothTime = 0.1f;
     public float speedDampTime = 0.01f;
-    public int PlayerHP = 20;
+    public float PlayerHP = 20.0f;
     public int respawnTimer;
 
     private float gravityValue = -9.81f;
@@ -44,7 +44,7 @@ public class EricCharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (PlayerHP > 0)
+        if (PlayerHP > 0.0f)
         {
             if (Input.GetButtonDown("Draw Weapon"))
             {
@@ -153,7 +153,7 @@ public class EricCharacterMovement : MonoBehaviour
             controller.Move(movementVector);
         }
 
-        if (PlayerHP <= 0)
+        if (PlayerHP <= 0.0f)
         {
             anim?.SetBool(hash.deathBool, true);
             StartCoroutine(Respawn());
@@ -163,7 +163,7 @@ public class EricCharacterMovement : MonoBehaviour
     IEnumerator Respawn()
     {
         yield return new WaitForSeconds(respawnTimer);
-        PlayerHP = 20;
+        PlayerHP = 20.0f;
         anim?.SetBool(hash.deathBool, false);
     }
 }

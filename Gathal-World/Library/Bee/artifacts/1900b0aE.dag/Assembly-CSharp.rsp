@@ -318,12 +318,18 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/Abilities.cs"
+"Assets/Scripts/ActiveShield.cs"
 "Assets/Scripts/Button.cs"
+"Assets/Scripts/CharacterDamageHitBox.cs"
 "Assets/Scripts/EricCharacterMovement.cs"
 "Assets/Scripts/EricsPowerUps.cs"
 "Assets/Scripts/FollowCamera.cs"
 "Assets/Scripts/Hashing.cs"
+"Assets/Scripts/LaunchProjectile.cs"
+"Assets/Scripts/Projectile.cs"
 "Assets/Scripts/SetUpCameras.cs"
+"Assets/Scripts/Shield.cs"
 "Assets/Scripts/Slime.cs"
 -langversion:8.0
 
