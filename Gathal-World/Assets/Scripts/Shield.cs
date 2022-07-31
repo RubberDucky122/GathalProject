@@ -19,24 +19,35 @@ public class Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("E"))
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<EricCharacterMovement>().DefenseToggleNum == 0)
         {
-            if (canSpawn == true)
+
+            if (Input.GetButtonDown("E"))
             {
-                newShield = Instantiate(ShieldObject);
-                newShield.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
-                StartCoroutine(ShieldDurationTimer());
+                if (canSpawn == true)
+                {
+                    newShield = Instantiate(ShieldObject);
+                    newShield.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+                    StartCoroutine(ShieldDurationTimer());
+                }
+            }
+
+            if (canSpawn == false)
+            {
+                if (ShieldHealth <= 0)
+                {
+                    Destroy(newShield);
+                    newShield = null;
+                    StartCoroutine(RespawnTimer());
+                }
             }
         }
-
-        if (canSpawn == false)
+        else
         {
-            if (ShieldHealth <= 0)
-            {
-                Destroy(newShield);
-                newShield = null;
-                StartCoroutine(RespawnTimer());  
-            }
+            Destroy(newShield);
+            newShield = null;
+            canSpawn = true;
+            ShieldHealth = ShieldHealthMax;
         }
     }
 

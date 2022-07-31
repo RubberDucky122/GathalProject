@@ -7,6 +7,7 @@ TagManager:
   - Shield
   - Projectile
   - EnemyTarget
+  - FrontalHoverPos
   layers:
   - Default
   - TransparentFX

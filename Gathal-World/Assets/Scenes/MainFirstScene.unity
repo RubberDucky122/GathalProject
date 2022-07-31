@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3030743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3030744}
+  m_Layer: 0
+  m_Name: RotatingFront
+  m_TagString: FrontalHoverPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3030744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3030743}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1339143795}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &21452632
 GameObject:
   m_ObjectHideFlags: 0
@@ -5429,6 +5459,7 @@ GameObject:
   - component: {fileID: 753487987}
   - component: {fileID: 753487988}
   - component: {fileID: 753487989}
+  - component: {fileID: 753487990}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: GameController
@@ -5485,11 +5516,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShieldObject: {fileID: 752650591425600053, guid: 57fdff5063e500a47b9ac5cebe188dab, type: 3}
   newShield: {fileID: 0}
-  ShieldHealth: 10
-  ShieldHealthMax: 10
+  ShieldHealth: 50
+  ShieldHealthMax: 50
   ShieldDuration: 10
   ShieldRespawnTimer: 10
   canSpawn: 1
+--- !u!114 &753487990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753487986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12cad969ddd2ce948a579dc8962428b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShieldObject: {fileID: 2767309010873649999, guid: 46e45b53e1bc870478a581fc4546f9dd, type: 3}
+  newShield: {fileID: 0}
+  canSpawn: 1
+  ShieldDuration: 20
+  ShieldRespawnTimer: 10
 --- !u!1 &787157761
 GameObject:
   m_ObjectHideFlags: 0
@@ -5841,9 +5889,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraTarget: {fileID: 1339143795}
   MaxViewDistance: 15
-  MinViewDistance: 2
+  MinViewDistance: 6
   ZoomRate: 40
-  cameraTargetHeight: 1
+  cameraTargetHeight: 2
 --- !u!1 &1014632844
 GameObject:
   m_ObjectHideFlags: 0
@@ -6623,6 +6671,7 @@ MonoBehaviour:
   speedDampTime: 0.01
   PlayerHP: 20
   respawnTimer: 5
+  DefenseToggleNum: 0
 --- !u!95 &1339143792
 Animator:
   serializedVersion: 3
@@ -6708,6 +6757,7 @@ Transform:
   - {fileID: 2073277094}
   - {fileID: 1628717649}
   - {fileID: 1503962565}
+  - {fileID: 3030744}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

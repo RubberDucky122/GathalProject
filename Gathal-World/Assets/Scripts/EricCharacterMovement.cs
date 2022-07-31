@@ -26,6 +26,7 @@ public class EricCharacterMovement : MonoBehaviour
     public float speedDampTime = 0.01f;
     public float PlayerHP = 20.0f;
     public int respawnTimer;
+    public int DefenseToggleNum = 0;
 
     private float gravityValue = -9.81f;
 
@@ -44,6 +45,15 @@ public class EricCharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Q"))
+        {
+            DefenseToggleNum = DefenseToggleNum + 1;
+            if (DefenseToggleNum >= 2)
+            {
+                DefenseToggleNum = 0;
+            }
+        }
+
         if (PlayerHP > 0.0f)
         {
             if (Input.GetButtonDown("Draw Weapon"))
